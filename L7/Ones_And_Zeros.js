@@ -4,6 +4,7 @@
 
 
 const binaryArrayToNumber = arr => {
+    // Converting array values into integers, following binary rule
     const binary = [
     (arr[3] * 1),
     (arr[2] * 2),
