@@ -2,14 +2,13 @@
 
 
 function solution(string) {
-    // let newStr = string.split('').map( char => {
-    //     if (char === char.toUpperCase()) {
-    //         char = ` ${char}` 
-    //     }
-    //     return char
-    // })
-    // return newStr.join('')
-    return string.replace(/[A-Z]/g, " $&")
+    let newStr = string.split('').map( char => {
+        if (char === char.toUpperCase()) {
+            char = ` ${char}` 
+        }
+        return char
+    })
+    return newStr.join('')
 }
   
 // Test
