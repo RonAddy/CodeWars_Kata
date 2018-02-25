@@ -1,12 +1,15 @@
+// Complete the solution so that the function will break up camel casing, using a space between words.
+
+
 function solution(string) {
-    string.replace(/[A-Z]/, (char) => {
-      console.log(string.indexOf(char))
-      console.log(string)
-      return string.slice(char, ` ${char}`)
-    }) 
-
-    console.log(string)
-  }
-
+    let newStr = string.split('').map( char => {
+        if (char === char.toUpperCase()) {
+            char = ` ${char}` 
+        }
+        return char
+    })
+    return newStr.join('')
+}
   
-console.log(solution('camelCasing'))
+// Test
+// console.log(solution('camelCasingRules'))
