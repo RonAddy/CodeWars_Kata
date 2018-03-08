@@ -15,4 +15,3 @@ function stockList(listOfArt, listOfCat){
 
 }
 stockList(["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B"])
-console.log(...[1,2,3,4,5,56][4]);
