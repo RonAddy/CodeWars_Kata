@@ -1,18 +1,18 @@
-function stockList(listOfArt, listOfCat) {
-  const bookResults = {}
-  if (Array.isArray(listOfArt) && Array.isArray(listOfCat)) {
-    // must find way to dynamically increment values when duplicate is found
-    listOfArt.forEach(ele => {
-        if(bookResults[ele[0]] === null){
-
-        }
-      bookResults[ele[0]] += parseInt(ele.substr(ele.search(/[0-9]/), ele[ele.length]))
-    })
-    console.log(bookResults)
-  } else {
-    console.log(false);
-    return false
+function stockList(listOfArt, listOfCat){
+    function getBookNumber(ele) {
+    return `( ${ele[0]} : ${parseInt(ele.substr(ele.search(/[0-9]/), ele[ele.length]))} )`
   }
-}
+  
+  const bookResults = []
+  listOfArt.forEach(element => {
+    listOfCat.includes(element[0])? bookResults.push(getBookNumber(element)): null
+  });
 
+  console.log(bookResults);
+  console.log(parseInt(listOfArt[0]));
+  
+  
+
+}
 stockList(["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"], ["A", "B"])
+console.log(...[1,2,3,4,5,56][4]);
