@@ -1,20 +1,24 @@
-function domainName(url) {
-  if (url.includes("http") || url.includes("www")) {
-    let start = url.search(/(www|:)/i)
-    console.log(url)
-    console.log(start);
-    // switch(start) {
-    //   case 
+// Write a function that when given a URL as a string, parses out just the domain name and returns it as a string
 
-    // }
-  }
-  //   }  return url.slice(url.search(/.]/)+1, url.lastIndexOf(/[.]/)-2);
-  //   return url.slice(url.search("//")+2, url.search(/[.]/));
+function domainName(url) {
+  //remove period and ending and return domain name
+  const cutDomainString = (str) => str.substr(0, str.search(/["."]/));
+  // remove test case prefixes
+  if (url.includes("www.")) {
+    let str = url.slice(url.indexOf(".") + 1)
+    return cutDomainString(str)
+  } else if (url.includes("://")) {
+    let str = url.slice(url.search(/:/) + 3)
+    return cutDomainString(str)
+  } else return cutDomainString(url)
+
 }
 
-domainName("http://google.com")
-domainName("http://google.co.jp")
-domainName("https://www.rnm7np1o8p.io/default.html")
-
-// console.log(domainName("http://google.com"));
-// console.log(domainName("www.xakep.ru"));
+//Test:
+// domainName("http://google.com")
+// domainName("http://google.co.jp")
+// domainName("https://www.rnm7np1o8p.io/default.html")
+// domainName("www.xakep.ru"),
+// domainName("https://youtube.com")
+// domainName("http://www.codewars.com/kata/")
+// domainName("icann.org")
