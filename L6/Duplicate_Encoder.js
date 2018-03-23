@@ -8,9 +8,14 @@
 // "(( @" => "))(("
 
 function duplicateEncode(word){
-    let newWord = word.toLowerCase().split("")
-    return newWord.map( character => word.indexOf(character) !== word.lastIndexOf(character) ? ")" : "(").join("")
+    // turn string into array for iteration
+    let result = word.toLowerCase().split("")
+
+    // check for duplicates with index matching and change characters
+    return result.map( character => result.lastIndexOf(character) !== result.indexOf(character) ? ")" : "(").join("")
 }
 
-console.log(duplicateEncode("din"));
-console.log(duplicateEncode("recede"));
+// Test
+// console.log(duplicateEncode("din"));
+// console.log(duplicateEncode("recede"));
+// console.log(duplicateEncode("Supralapsarian"));
