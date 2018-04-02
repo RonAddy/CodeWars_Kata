@@ -6,10 +6,13 @@
 
 
 function count (string) {  
-    let ans = {a: 0}
-    string = string.split("").
-    forEach( ele => Object.keys(ans).includes(ele) ? ans[`${ele}`]+= 1 : ans[`${ele}`] = 1)
-     return ans;
+  let ans = {}
+
+  //Turn string into array; Check object keys against array; If it exists, add 1 to count
+
+  string.split("").forEach( ele => Object.keys(ans).includes(ele) ? ans[`${ele}`]+= 1 : ans[`${ele}`] = 1)
+   return ans;
   }
 
-console.log(count("aba"))
+  // Test
+  // count("abagghg");
