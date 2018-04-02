@@ -6,8 +6,10 @@
 
 
 function count (string) {  
-    // The function code should be here
-     return {};
+    let ans = {a: 0}
+    string = string.split("").
+    forEach( ele => Object.keys(ans).includes(ele) ? ans[`${ele}`]+= 1 : ans[`${ele}`] = 1)
+     return ans;
   }
 
-z
+console.log(count("aba"))
