@@ -8,7 +8,13 @@
 
 var uniqueInOrder=function(iterable){
     let ans =[]
+    let index = 0
     for( let x of iterable){
-  
+      iterable[index+1]  === x ? null : ans.push(x) 
+      index++
    }
+
+   console.log(ans);
   }
+
+  uniqueInOrder('AAAABBBCCDAABBB') 
