@@ -6,15 +6,17 @@
 // uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
 
-var uniqueInOrder=function(iterable){
+let uniqueInOrder=function(iterable){
     let ans =[]
+    // initialize index accumulator
     let index = 0
+
+    //If the next in the iterable does not equal the current one, push into answer array
     for( let x of iterable){
       iterable[index+1]  === x ? null : ans.push(x) 
       index++
    }
-
-   console.log(ans);
+      return ans
   }
-
-  uniqueInOrder('AAAABBBCCDAABBB') 
+  
+  uniqueInOrder('ABBCcAD')  
