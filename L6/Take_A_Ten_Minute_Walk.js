@@ -3,8 +3,10 @@
 // Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
 function isValidWalk(walk) {
+    //Initial spot, directions in walk array must return to this position
     const init = [0,0]
-
+    
+    //Apply walk directions to init position
     walk.map( i => {
       switch(i) {
         case 'n': init[1] += 1; break;
@@ -13,12 +15,13 @@ function isValidWalk(walk) {
         case 'w': init[0] -= 1;  break;
       }})
   
+      //Return true if conditions are met, otherwise false
       return (walk.length === 10) && (init[0] === 0) && (init[1] === 0) 
       
   }
 
-
-console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
-console.log(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']))
-console.log(isValidWalk(['w']))
-console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s']))
+// Test
+// console.log(isValidWalk(['n','s','n','s','n','s','n','s','n','s']))
+// console.log(isValidWalk(['w','e','w','e','w','e','w','e','w','e','w','e']))
+// console.log(isValidWalk(['w']))
+// console.log(isValidWalk(['n','n','n','s','n','s','n','s','n','s']))
