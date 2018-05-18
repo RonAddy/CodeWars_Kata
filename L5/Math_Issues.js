@@ -14,10 +14,10 @@ Math.round = function(number) {
     return 0; // TODO: fix this
   };
   
-  Math.floor = function(number) {
-      let string = number.toString()
-      return parseInt(string.replace(string[string.length-1], 0))
-  };
+  // Math.floor = function(number) {
+  //     let string = number.toString()
+  //     return parseInt(string.replace(string[string.length-1], 0))
+  // };
 
 
 // Math.round(0.4)
@@ -30,7 +30,7 @@ Math.round = function(number) {
 // Math.ceil(0.5)
 // 1
 
-// Math.floor(0.4) 
-//0
-// Math.floor(0.5)
-//0
+console.log(Math.floor(8.97877878))
+// 0
+Math.floor(0.5)
+// 0

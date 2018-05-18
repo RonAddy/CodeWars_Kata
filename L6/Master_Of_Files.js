@@ -15,6 +15,7 @@
 // It should return true or false, simply.
 // File extensions should consist of lowercase letters and numbers only.
 // File names should consist of letters only (uppercase, lowercase, or both)
+
 function validateString(str, validExt) {
     const ext = str.slice(str.lastIndexOf('.'))
     const filename = str.slice(0, str.indexOf(ext))
@@ -39,8 +40,8 @@ String.prototype.isAudio= function(){
     return validateString(this, extensions)
   };
 
-
-  "DaftPunk.FLAC".isAudio()
-  "NothingElseMatters.mp3".isAudio()
-  "Nothing Else Matters.mp3".isAudio()
-  " Amon Tobin.alac".isAudio()
+// Test
+//   console.log("DaftPunk.FLAC".isAudio())
+//   console.log("NothingElseMatters.mp3".isAudio())
+//   console.log("Nothing Else Matters.mp3".isAudio())
+//   console.log(" Amon Tobin.alac".isAudio())
