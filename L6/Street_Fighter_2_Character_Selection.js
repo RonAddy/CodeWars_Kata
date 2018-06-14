@@ -24,4 +24,6 @@ function streetFighterSelection(fighters, position, moves) {
           ans.push(fighters[curr])
         }
 
-      }
+      })
+
+  }
