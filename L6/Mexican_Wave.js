@@ -6,6 +6,7 @@ function wave(input){
     input = input.toLowerCase()
     return input.substr(0, index) + x.toUpperCase()+ input.substr(index+1)
     })
-    if (!ans.forEach( x => match(/[A-Z/))
+    // if (!ans.forEach( x => match(/[A-Z/))
     return ans
   }
+  
