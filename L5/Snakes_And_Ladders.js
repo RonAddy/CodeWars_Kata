@@ -1,9 +1,18 @@
 //Refer to Snakes_And_Ladders.md file in the assets directory for information
 
 function SnakesLadders() {
-  this.p1 = 'Player 1';
-  this.p2 = 'Player 2';
+  //Player 1 & 2:
+  //name and current position on board (initialized at 1)
+  this.p1 = {
+      name: 'Player 1',
+      position: 1
+    }
+  this.p2 = {
+      name: 'Player 2',
+      position: 1
+  }
 
+ //  
   this.snakes = {
     16: 6,
     46: 25,
@@ -17,23 +26,41 @@ function SnakesLadders() {
     99: 80
   };
 
-  this.p1Position = 1;
-  this.p2Position = 1;
-
   this.currentPlayer = this.p1;
 
-  this.board = Array.from({length:10}, (v,i) => i+1 )
+  this.board = Array.from({length:100}, (v,i) => i+1 )
 
-  const init = () => {
-    console.log(this.board);
+  this.init = () => {
+    console.log(this.p2.name);
   };
 
-  init();
+  this.checkWin = () =>{
+      if (this,currentPlayer.position === 100) return `${this.currentPlayer.name} wins!`;
+  }
+
+  this.isOnSnake = (position) => {
+    if(this.snakes[`${position}`]){
+        console.log(true);
+    }
+    // const snakes = Object.keys(this.snakes).forEach( ele=> {
+    //     if( this.currentPlayer.position === ele){
+    //         console.log( `${this.currentPlayer.name} landed on a snake at ${ele}`)
+    //     }
+    // })
+  }
+
+  this.init();
 };
 
 SnakesLadders.prototype.play = function (die1, die2) {
-    console.log(this.p1);
+    this.currentPlayer.position += die1+die2;
+
+    console.log()
+    if( die1 === die2){
+
+    }
 }
 
-// let game = new SnakesLadders();
-// game.play();
+let game = new SnakesLadders();
+console.log(game.isOnSnake(game.p1.position))
+// console.log();
