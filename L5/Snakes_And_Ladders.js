@@ -2,17 +2,18 @@
 
 function SnakesLadders() {
   //Player 1 & 2:
-  //name and current position on board (initialized at 1)
+  //Name and current position on board (initialized at 1)
   this.p1 = {
-      name: 'Player 1',
-      position: 1
-    }
+    name: 'Player 1',
+    position: 23
+  }
   this.p2 = {
-      name: 'Player 2',
-      position: 1
+    name: 'Player 2',
+    position: 1
   }
 
- //  
+  //Keys: "Snake bite" spots on board 
+  //Values:  Resulting position
   this.snakes = {
     16: 6,
     46: 25,
@@ -24,43 +25,40 @@ function SnakesLadders() {
     92: 88,
     95: 75,
     99: 80
-  };
+  }
 
+  //Game starts with player 1
   this.currentPlayer = this.p1;
 
-  this.board = Array.from({length:100}, (v,i) => i+1 )
-
-  this.init = () => {
-    console.log(this.p2.name);
-  };
-
-  this.checkWin = () =>{
-      if (this,currentPlayer.position === 100) return `${this.currentPlayer.name} wins!`;
-  }
-
-  this.isOnSnake = (position) => {
-    if(this.snakes[`${position}`]){
-        console.log(true);
+  //Check if player position is on 100
+  this.checkWin = () => {
+    if (this.currentPlayer.position === 100) {
+      return `${this.currentPlayer.name} wins!`;
     }
-    // const snakes = Object.keys(this.snakes).forEach( ele=> {
-    //     if( this.currentPlayer.position === ele){
-    //         console.log( `${this.currentPlayer.name} landed on a snake at ${ele}`)
-    //     }
-    // })
   }
 
-  this.init();
-};
+  //Check if player move lands them on snake head
+  //If input (current position) is a valid key in the object,
+  //assign its new position the value of the key
+  this.isOnSnake = (position) => {
+    if (this.snakes[`${position}`]) {
+      this.currentPlayer.position = this.snakes[`${position}`];
+    }
+    else {
+        return false;
+    }
+  }
+  
+}
 
 SnakesLadders.prototype.play = function (die1, die2) {
-    this.currentPlayer.position += die1+die2;
+  this.currentPlayer.position += die1 + die2;
 
-    console.log()
-    if( die1 === die2){
+  console.log();
+  if (die1 === die2) {
 
-    }
+  }
 }
 
 let game = new SnakesLadders();
-console.log(game.isOnSnake(game.p1.position))
-// console.log();
+console.log(game.isOnSnake(game.p1.position));
